@@ -1,16 +1,17 @@
 const apiKey = config.apiKey; // Reemplaza con tu clave de API
-
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
-const resultsContainer = document.getElementById('results');
+const listSection = document.querySelector('.list');
 
-searchButton.addEventListener('click', searchMovies);
+searchButton.addEventListener('click', searchMedia);
 
-function searchMovies() {
+function searchMedia() {
     const searchTerm = searchInput.value.trim();
     if (searchTerm === '') return;
 
-    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
+    const mediaType = document.querySelector('select').value;
+
+    const apiUrl = `https://api.themoviedb.org/3/search/${mediaType}?api_key=${apiKey}&query=${searchTerm}`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -21,16 +22,26 @@ function searchMovies() {
 }
 
 function displayResults(results) {
-    resultsContainer.innerHTML = '';
+    listSection.innerHTML = '';
 
-    results.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.classList.add('movie');
-        movieElement.innerHTML = `
-            <h2>${movie.title}</h2>
-            <p>${movie.overview}</p>
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}">
-        `;
-        resultsContainer.appendChild(movieElement);
+    results.forEach(result => {
+        const card = document.createElement('article');
+        card.classList.add('card');
+
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w500/${result.poster_path}`;
+        img.alt = result.title || result.name;
+        img.width = 200;
+
+        const title = document.createElement('span');
+        title.id = 'title';
+        title.textContent = result.title || result.name;
+
+        card.appendChild(img);
+        card.appendChild(title);
+        listSection.appendChild(card);
+
+        console.log(result); // Mostrar información en la consola
     });
 }
+

@@ -83,18 +83,37 @@ header {
 }
 
 /* MAIN */
+main {
+  margin: 10px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
+  outline: 1px solid white;
+  justify-content: center;
   width: 200px;
+}
+
+.card, .card img {
+  border-radius: 5px;
 }
 
 .card #title {
   font-size: 20px;
   padding: 5px;
-}
-
-.card #description {
-  
+  text-align: left;
 }
