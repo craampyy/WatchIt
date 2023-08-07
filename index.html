@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WatchIt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- JS -->
+    <script src="js/config.js"></script>
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="search">
+        <select>
+          <option value="movies">Movies</option>
+          <option value="series">Series</option>
+        </select>
+        <input type="text" placeholder="Search here" />
+        <button>
+          <span class="material-icons-sharp"> search </span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="list">
+        <article class="card">
+          <img
+            src="https://image.tmdb.org/t/p/w500//lxM6kqilAdpdhqUl2biYp5frUxE.jpg"
+            alt="Jaws"
+            width="200px"
+          />
+          <span id="title">Jaws</span>
+          <p id="description">
+            When an insatiable great white shark terrorizes the townspeople of
+            Amity Island, the police chief, an oceanographer and a grizzled
+            shark hunter seek to destroy the blood-thirsty beast.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
