@@ -11,20 +11,32 @@
   </head>
   <body>
     <header>
-      <div class="search">
-        <select>
-          <option value="movie">Movies</option>
-          <option value="tv">Series</option>
-        </select>
-        <input type="text" id="searchInput" placeholder="Search here" />
-        <button id="searchButton">
-          <span class="material-icons-sharp"> search </span>
-        </button>
-      </div>
+      <nav>
+        <a href="#" id="active">All</a>
+        <a href="#">Movies</a>
+        <a href="#">Series</a>
+      </nav>
     </header>
     <main>
-      <section class="list">
-        
+      <!-- MOVIES -->
+      <section class="most-popular movies">
+        <div class="most-popular-header">
+          <h2><strong>Most Popular Movies</strong></h2>
+          <a href="#"><h4>View All</h4></a>
+        </div>
+        <section class="resumed-list">
+          <!-- LIST OF MOST POPULAR MOVIES -->
+        </section>
+      </section>
+      <!-- SERIES -->
+      <section class="most-popular series">
+        <div class="most-popular-header">
+          <h2><strong>Most Popular Series</strong></h2>
+          <a href="#"><h4>View All</h4></a>
+        </div>
+        <section class="resumed-list">
+          <!-- LIST OF MOST POPULAR SERIES -->
+        </section>
       </section>
     </main>
   </body>
