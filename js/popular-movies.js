@@ -1,4 +1,5 @@
-const apiKey = config.apiKey; // Reemplaza con tu clave de API
+// const apiKey = config.apiKey; // Reemplaza con tu clave de API
+const apiKey = '1b9654c10e7a7f4b6d3b1123464c993b';
 const moviesListSection = document.querySelector(".list");
 
 const popularMoviesUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`;
