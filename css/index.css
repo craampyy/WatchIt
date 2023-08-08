@@ -28,6 +28,9 @@ header {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 header nav {
@@ -51,9 +54,54 @@ header nav a:hover {
   transform: scale(0.9);
 }
 
+header .search {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, #8c4eff, #4e50ff);
+  border-radius: 20px;
+}
+
+header .search input {
+  width: 225px;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+header .search input::placeholder {
+  color: whitesmoke;
+  font: 'Outfit';
+}
+
+header .search button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+header .search span {
+  color: whitesmoke;
+  padding: 0 10px;
+}
+
+
+
 /* MAIN */
 main {
   margin: 0 190px;
+}
+
+main h3 {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+main h2#results {
+  font-size: 2.5em;
 }
 
 /* MOST POPULAR */
@@ -91,14 +139,11 @@ main .most-popular-header h4{
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  transition: 0.5s ease-in-out all;
-}
-
-.card * {
+  transition: 0.3s ease-in all;
 }
 
 .card:hover {
-  transition: 0.5s ease-in-out all;
+  transition: 0.3s ease-in all;
   transform: scale(0.95)
 }
 
@@ -146,4 +191,3 @@ main .most-popular-header h4{
   color: #47484e;
 }
 
-/* popular-movies-html */
